@@ -10,11 +10,13 @@ import android.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import com.example.assignment_2.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
-    List<Item> itemDatabase;
+    List<com.example.assignment_2.Item > itemDatabase = new ArrayList<>();
     Integer[] imageList = { R.drawable.cola, R.drawable.milk,R.drawable.chicken_drumstick, R.drawable.orange_drink, R.drawable.strawberry_milkshake};
     String[] nameList = {"Cola", "Milk", "Chicken", "Fanta", "Strawberry Milk"};
     String[] descriptionList={"Brown sweet drink","liquid cow","Delicious chicken","orange drink that i hate","Pink liquid cow"};
@@ -29,14 +31,15 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         swapToHomePage();
+        swapToSettingsButton();
 
-
+        com.example.assignment_2.Item item;
         for (int i= 0; i< imageList.length; i++ )
         { int image = imageList[i];
             String name = nameList[i];
             String description = descriptionList[i];
 
-            Item item = new Item (i, image, name, description);
+            item = new com.example.assignment_2.Item (i, image, name, description);
             itemDatabase.add(item);
 
         }
@@ -158,6 +161,25 @@ public class Main2Activity extends AppCompatActivity {
         FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapTodropdown(){
+        Fragment tempFrag= new dropdown();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentDropDown,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+    public void swapToSettingsButton(){
+        Fragment tempFrag= new SettingsButton();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentDropDown,tempFrag);
         ft.addToBackStack(null);
         ft.commit();
     }
