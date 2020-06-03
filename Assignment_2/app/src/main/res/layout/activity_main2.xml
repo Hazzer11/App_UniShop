@@ -36,6 +36,15 @@
         android:layout_width="400px"
         android:layout_height="600px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragmentAlert"
+        android:layout_width="600px"
+        android:layout_height="500px"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

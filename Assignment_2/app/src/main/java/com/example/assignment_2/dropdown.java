@@ -1,5 +1,7 @@
 package com.example.assignment_2;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -7,7 +9,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
 
 
 public class dropdown extends Fragment {
@@ -45,7 +47,38 @@ public class dropdown extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dropdown, container, false);
+
+
+        return inflater.inflate(R.layout.fragment_settings_button, container, false);
+    }
+
+    public void swapToSettingsPage(View view){
+        Fragment tempFrag= new SettingsPage();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentMain,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToPolicies(View view){
+        Fragment tempFrag= new Policies();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentMain,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToFeedbackPage(View view){
+        Fragment tempFrag= new FeedbackPage();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentMain,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 }

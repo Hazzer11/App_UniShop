@@ -36,6 +36,7 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="325dp"
         android:layout_height="314dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,5 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

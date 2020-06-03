@@ -8,11 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ItemSearch extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    List<Item > itemDatabase = new ArrayList<>();
+    Integer[] imageList = { R.drawable.cola, R.drawable.milk,R.drawable.chicken_drumstick, R.drawable.orange_drink, R.drawable.strawberry_milkshake};
+    String[] nameList = {"Cola", "Milk", "Chicken", "Fanta", "Strawberry Milk"};
+    String[] descriptionList={"Brown sweet drink","liquid cow","Delicious chicken","orange drink that i hate","Pink liquid cow"};
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -23,16 +30,10 @@ public class ItemSearch extends Fragment {
     public ItemSearch() {
         // Required empty public constructor
     }
+    public RecyclerView tempView;
+    public ItemListAdaptor itemAdaptor;
+    public View view;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ItemSearch.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ItemSearch newInstance(String param1, String param2) {
         ItemSearch fragment = new ItemSearch();
         Bundle args = new Bundle();
@@ -49,12 +50,27 @@ public class ItemSearch extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        for (int i= 0; i< imageList.length; i++ )
+        { int image = imageList[i];
+            String name = nameList[i];
+            String description = descriptionList[i];
+
+            com.example.assignment_2.Item item = new com.example.assignment_2.Item (i, image, name, description);
+            itemDatabase.add(item);
+
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_search, container, false);
+        view = inflater.inflate(R.layout.fragment_item_search, container, false);
+        tempView= view.findViewById(R.id.RectView);
+        itemAdaptor = new ItemListAdaptor(itemDatabase);
+        tempView.setAdapter(itemAdaptor);
+
+        return view;
     }
 }

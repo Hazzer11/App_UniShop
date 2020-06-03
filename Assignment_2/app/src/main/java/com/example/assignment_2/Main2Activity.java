@@ -11,6 +11,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import com.example.assignment_2.Item;
+import com.google.android.gms.maps.GoogleMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Main2Activity extends AppCompatActivity {
     Integer[] imageList = { R.drawable.cola, R.drawable.milk,R.drawable.chicken_drumstick, R.drawable.orange_drink, R.drawable.strawberry_milkshake};
     String[] nameList = {"Cola", "Milk", "Chicken", "Fanta", "Strawberry Milk"};
     String[] descriptionList={"Brown sweet drink","liquid cow","Delicious chicken","orange drink that i hate","Pink liquid cow"};
-
+    String UserName;
 
 
 
@@ -32,7 +33,7 @@ public class Main2Activity extends AppCompatActivity {
 
         swapToHomePage();
         swapToSettingsButton();
-
+        //AIzaSyAxmInoSgVtxnrcOeh4SXcVMFMrXAzNrD4
         com.example.assignment_2.Item item;
         for (int i= 0; i< imageList.length; i++ )
         { int image = imageList[i];
@@ -165,7 +166,7 @@ public class Main2Activity extends AppCompatActivity {
         ft.commit();
     }
 
-    public void swapTodropdown(){
+    public void swapToDropdown(){
         Fragment tempFrag= new dropdown();
 
         FragmentManager fm= getFragmentManager();
@@ -180,6 +181,36 @@ public class Main2Activity extends AppCompatActivity {
         FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentDropDown,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToDeleteListAlert(){
+        Fragment tempFrag= new DeleteListAlert();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentAlert,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToNewList(){
+        Fragment tempFrag= new NewList();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentAlert,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToListSelect(){
+        Fragment tempFrag= new ListSelect();
+
+        FragmentManager fm= getFragmentManager();
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentAlert,tempFrag);
         ft.addToBackStack(null);
         ft.commit();
     }
