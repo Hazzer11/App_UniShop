@@ -1,5 +1,6 @@
 package com.example.assignment_2;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -10,21 +11,21 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class HomePage extends Fragment implements OnMapReadyCallback{
-
+    public static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    public GoogleMap mMap;
+
     public MapView mMapView;
-    private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
-    public MapFragment mapFragment;
+
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -65,7 +66,7 @@ public class HomePage extends Fragment implements OnMapReadyCallback{
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
         }
-        mMapView = (MapView) view.findViewById(R.id.mapView);
+        mMapView = view.findViewById(R.id.mapView);
         mMapView.onCreate(mapViewBundle);
 
         mMapView.getMapAsync(this);
@@ -79,12 +80,8 @@ public class HomePage extends Fragment implements OnMapReadyCallback{
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        googleMap.setMyLocationEnabled(true);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
     @Override

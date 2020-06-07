@@ -7,17 +7,14 @@
     tools:context=".SettingsButton"
     >
 
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="56dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-
-
-        android:onClick="swapToDropdown"
-        android:src="@drawable/common_google_signin_btn_icon_dark_normal"
+        android:layout_marginTop="31dp"
+        android:src="@android:drawable/btn_star_big_on"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

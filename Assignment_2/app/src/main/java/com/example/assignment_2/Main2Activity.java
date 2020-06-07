@@ -1,6 +1,8 @@
 package com.example.assignment_2;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.app.Fragment;
 
@@ -8,10 +10,13 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
+import android.content.Intent;
+
 import android.os.Bundle;
+
 import android.view.View;
-import com.example.assignment_2.Item;
-import com.google.android.gms.maps.GoogleMap;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +27,8 @@ public class Main2Activity extends AppCompatActivity {
     String[] nameList = {"Cola", "Milk", "Chicken", "Fanta", "Strawberry Milk"};
     String[] descriptionList={"Brown sweet drink","liquid cow","Delicious chicken","orange drink that i hate","Pink liquid cow"};
     String UserName;
-
+    Integer REQUEST_LOCATION_PERMISSION;
+    FragmentManager fm= getFragmentManager();
 
 
 
@@ -32,7 +38,9 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         swapToHomePage();
+        //swapToDropdown();
         swapToSettingsButton();
+        //swapToListSelect();
         //AIzaSyAxmInoSgVtxnrcOeh4SXcVMFMrXAzNrD4
         com.example.assignment_2.Item item;
         for (int i= 0; i< imageList.length; i++ )
@@ -44,12 +52,16 @@ public class Main2Activity extends AppCompatActivity {
             itemDatabase.add(item);
 
         }
+
+        Gson gson = new Gson();
+        String temp = gson.toJson(databaseList());
+
     }
+
 
     public void swapToHomePage(){
         Fragment tempFrag= new HomePage();
 
-        FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -59,7 +71,6 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToShoppingList(View view){
         Fragment tempFrag= new ShoppingList();
 
-        FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -69,7 +80,6 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToItemSearch(View view){
         Fragment tempFrag= new ItemSearch();
 
-        FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -79,7 +89,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToCouponList(View view){
         Fragment tempFrag= new CouponList();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -89,7 +99,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToPolicies(View view){
         Fragment tempFrag= new Policies();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -99,7 +109,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToSettingsPage(View view){
         Fragment tempFrag= new SettingsPage();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -109,7 +119,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToShoppingListView(View view){
         Fragment tempFrag= new ShoppingListView();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -119,7 +129,17 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToCouponInfo(View view){
         Fragment tempFrag= new CouponInfo();
 
-        FragmentManager fm= getFragmentManager();
+
+        FragmentTransaction ft =fm.beginTransaction();
+        ft.replace(R.id.fragmentMain,tempFrag);
+        ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void swapToHomePage(View view){
+        Fragment tempFrag= new HomePage();
+
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -129,7 +149,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToFeedbackPage(View view){
         Fragment tempFrag= new FeedbackPage();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -139,7 +159,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToItemDisplay(View view){
         Fragment tempFrag= new ItemDisplay();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -149,7 +169,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToLocationInformationPage(View view){
         Fragment tempFrag= new LocationInformationPage();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -159,7 +179,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToLocationSelectionPage(View view){
         Fragment tempFrag= new LocationSelectionPage();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
         ft.addToBackStack(null);
@@ -169,7 +189,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToDropdown(){
         Fragment tempFrag= new dropdown();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentDropDown,tempFrag);
         ft.addToBackStack(null);
@@ -178,7 +198,6 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToSettingsButton(){
         Fragment tempFrag= new SettingsButton();
 
-        FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentDropDown,tempFrag);
         ft.addToBackStack(null);
@@ -188,7 +207,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToDeleteListAlert(){
         Fragment tempFrag= new DeleteListAlert();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentAlert,tempFrag);
         ft.addToBackStack(null);
@@ -198,7 +217,7 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToNewList(){
         Fragment tempFrag= new NewList();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentAlert,tempFrag);
         ft.addToBackStack(null);
@@ -208,10 +227,20 @@ public class Main2Activity extends AppCompatActivity {
     public void swapToListSelect(){
         Fragment tempFrag= new ListSelect();
 
-        FragmentManager fm= getFragmentManager();
+
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentAlert,tempFrag);
         ft.addToBackStack(null);
         ft.commit();
+    }
+
+    public void Logout(){
+        Intent i=new Intent(this , Main2Activity.class);
+        try{
+            finish();
+        }
+        catch (Exception e){
+
+        };
     }
 }

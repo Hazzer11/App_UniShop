@@ -1,7 +1,9 @@
 package com.example.assignment_2;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -10,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
+import com.example.assignment_2.Main2Activity;
 
 public class dropdown extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -49,15 +51,19 @@ public class dropdown extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        return inflater.inflate(R.layout.fragment_settings_button, container, false);
+        return inflater.inflate(R.layout.fragment_dropdown, container, false);
+    }
+    public void Logout2(View temp){
+        new Main2Activity().Logout();
     }
 
     public void swapToSettingsPage(View view){
         Fragment tempFrag= new SettingsPage();
-
+        Fragment tempFrag2= new SettingsButton();
         FragmentManager fm= getFragmentManager();
         FragmentTransaction ft =fm.beginTransaction();
         ft.replace(R.id.fragmentMain,tempFrag);
+        ft.replace(R.id.fragmentDropDown,tempFrag2);
         ft.addToBackStack(null);
         ft.commit();
     }
@@ -81,4 +87,6 @@ public class dropdown extends Fragment {
         ft.addToBackStack(null);
         ft.commit();
     }
+
+
 }
