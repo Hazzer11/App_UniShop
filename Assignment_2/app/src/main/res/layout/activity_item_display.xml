@@ -4,16 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemDisplay">
+    tools:context=".ItemDisplayActivity">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="226dp"
+        android:layout_height="67dp"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentAlert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <FrameLayout
+        android:id="@+id/fragmentAlert"
+        android:layout_width="400px"
+        android:layout_height="600px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="172dp"
         android:layout_height="172dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
@@ -30,6 +48,7 @@
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
@@ -38,6 +57,7 @@
         android:layout_width="112dp"
         android:layout_height="44dp"
         android:text="Current amount"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spinner2"
         app:layout_constraintTop_toTopOf="@+id/spinner2" />
 

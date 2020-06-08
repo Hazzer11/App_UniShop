@@ -53,40 +53,9 @@ public class dropdown extends Fragment {
 
         return inflater.inflate(R.layout.fragment_dropdown, container, false);
     }
-    public void Logout2(View temp){
-        new Main2Activity().Logout();
-    }
 
-    public void swapToSettingsPage(View view){
-        Fragment tempFrag= new SettingsPage();
-        Fragment tempFrag2= new SettingsButton();
-        FragmentManager fm= getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        ft.replace(R.id.fragmentMain,tempFrag);
-        ft.replace(R.id.fragmentDropDown,tempFrag2);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
 
-    public void swapToPolicies(View view){
-        Fragment tempFrag= new Policies();
 
-        FragmentManager fm= getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        ft.replace(R.id.fragmentMain,tempFrag);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
-
-    public void swapToFeedbackPage(View view){
-        Fragment tempFrag= new FeedbackPage();
-
-        FragmentManager fm= getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        ft.replace(R.id.fragmentMain,tempFrag);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
 
 
 }

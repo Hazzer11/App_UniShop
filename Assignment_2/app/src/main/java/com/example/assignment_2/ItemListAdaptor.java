@@ -16,9 +16,9 @@ public class ItemListAdaptor extends RecyclerView.Adapter<ItemListAdaptor.ItemLi
 
     List<Item> itemList;
     Context context;
-    public ItemListAdaptor(List<Item> itemlist) {
+    public ItemListAdaptor(Context context,List<Item> itemlist) {
         this.itemList=itemlist;
-
+        this.context=context;
     }
 
     public class ItemListAdaptor_ViewHolder extends RecyclerView.ViewHolder{
@@ -48,6 +48,7 @@ public class ItemListAdaptor extends RecyclerView.Adapter<ItemListAdaptor.ItemLi
     public void onBindViewHolder(@NonNull ItemListAdaptor_ViewHolder holder, int position) {
         holder.ItemImageView.setImageResource(itemList.get(position).getImage());
         holder.NameTextView.setText(itemList.get(position).getName());
+        holder.NameTextView2.setText(itemList.get(position).getName());
     }
 
     @Override

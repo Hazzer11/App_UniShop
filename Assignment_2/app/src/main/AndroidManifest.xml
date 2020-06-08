@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".ItemSearchActivity"></activity>
+        <activity android:name=".ShoppingListActivity"></activity>
+        <activity android:name=".CouponListActivity"></activity>
+        <activity android:name=".LocationSelectionPageActivity"></activity>
+        <activity android:name=".ItemDisplayActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

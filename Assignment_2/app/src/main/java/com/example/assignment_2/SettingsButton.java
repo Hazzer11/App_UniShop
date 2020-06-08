@@ -58,7 +58,7 @@ public class SettingsButton extends Fragment {
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ;
+
         ft.replace(R.id.fragmentDropDown, tempFrag);
         ft.addToBackStack(null);
         ft.commit();

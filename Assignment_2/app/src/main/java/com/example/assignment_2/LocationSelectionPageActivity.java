@@ -1,87 +1,70 @@
 package com.example.assignment_2;
 
-import android.content.res.Resources;
 import android.os.Bundle;
-
-import android.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class HomePage extends Fragment implements OnMapReadyCallback{
-    public static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
+public class LocationSelectionPageActivity extends AppCompatActivity implements OnMapReadyCallback {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    public GoogleMap mMap;
     public MapView mMapView;
+    public static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
 
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public HomePage() {
+    public LocationSelectionPageActivity() {
+        // Required empty public constructor
     }
 
-    public ShoppingList fragOne;
-    public ItemSearch fragTwo;
-    public CouponList fragThree;
 
-    public static HomePage newInstance(String param1, String param2) {
-        HomePage fragment = new HomePage();
+    public static LocationSelectionPageActivity newInstance(String param1, String param2) {
+        LocationSelectionPageActivity fragment = new LocationSelectionPageActivity();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view=inflater.inflate(R.layout.fragment_home_page, container, false);
-
-        super.onCreate(savedInstanceState);
-
-
+        setContentView(R.layout.activity_location_selection_page);
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
         }
-        mMapView = view.findViewById(R.id.mapView);
+
+        mMapView = this.findViewById(R.id.mapView2);
         mMapView.onCreate(mapViewBundle);
-
         mMapView.getMapAsync(this);
-
-        return view;
-
     }
-
 
 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        googleMap.setMyLocationEnabled(true);
-
+        mMap=googleMap;
+        mMap.setMyLocationEnabled(true);
     }
 
     @Override
