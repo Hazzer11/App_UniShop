@@ -1,9 +1,5 @@
-package com.example.assignment_2;
+package com.example.assignment_2.fragments;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -11,8 +7,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import com.example.assignment_2.Main2Activity;
+
+import com.example.assignment_2.R;
 
 public class dropdown extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

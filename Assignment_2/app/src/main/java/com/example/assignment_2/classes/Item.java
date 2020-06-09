@@ -1,4 +1,4 @@
-package com.example.assignment_2;
+package com.example.assignment_2.classes;
 
 public class Item {
     private int id, image;

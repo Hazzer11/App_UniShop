@@ -1,4 +1,4 @@
-package com.example.assignment_2;
+package com.example.assignment_2.fragments;
 
 import android.os.Bundle;
 
@@ -8,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.assignment_2.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ListSelect#newInstance} factory method to
+ * Use the {@link DeleteListAlert#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ListSelect extends Fragment {
+public class DeleteListAlert extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +26,7 @@ public class ListSelect extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ListSelect() {
+    public DeleteListAlert() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class ListSelect extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ListSelect.
+     * @return A new instance of fragment DeleteListAlert.
      */
     // TODO: Rename and change types and number of parameters
-    public static ListSelect newInstance(String param1, String param2) {
-        ListSelect fragment = new ListSelect();
+    public static DeleteListAlert newInstance(String param1, String param2) {
+        DeleteListAlert fragment = new DeleteListAlert();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class ListSelect extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_select, container, false);
+        return inflater.inflate(R.layout.fragment_delete_list_alert, container, false);
     }
 }

@@ -1,6 +1,5 @@
-package com.example.assignment_2;
+package com.example.assignment_2.activieties;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -8,12 +7,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import com.example.assignment_2.R;
+import com.example.assignment_2.activieties.Main2Activity;
 
 public class MainActivity extends AppCompatActivity {
 

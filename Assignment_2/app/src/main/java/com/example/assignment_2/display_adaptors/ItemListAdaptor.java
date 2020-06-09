@@ -1,4 +1,4 @@
-package com.example.assignment_2;
+package com.example.assignment_2.display_adaptors;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.assignment_2.classes.Item;
+import com.example.assignment_2.R;
 
 import java.util.List;
 

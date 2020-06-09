@@ -1,4 +1,4 @@
-package com.example.assignment_2;
+package com.example.assignment_2.fragments;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.assignment_2.R;
 
 
 public class SettingsButton extends Fragment {

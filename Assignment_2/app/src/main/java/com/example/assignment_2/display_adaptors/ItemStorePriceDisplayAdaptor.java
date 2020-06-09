@@ -1,35 +1,36 @@
-
-package com.example.assignment_2;
+package com.example.assignment_2.display_adaptors;
         import android.content.Context;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
-        import android.widget.ImageView;
         import android.widget.TextView;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import com.example.assignment_2.classes.Item;
+        import com.example.assignment_2.R;
+
         import java.util.List;
 
-public class ShoppingListItemDisplayAdaptor extends RecyclerView.Adapter<ShoppingListItemDisplayAdaptor.ShoppingListItemDisplayAdaptor_ViewHolder>{
+public class ItemStorePriceDisplayAdaptor extends RecyclerView.Adapter<ItemStorePriceDisplayAdaptor.ItemStorePriceDisplayAdaptor_ViewHolder>{
 
     List<Item> itemList;
     Context context;
 
-    public ShoppingListItemDisplayAdaptor(List<Item> itemlist) {
+    public ItemStorePriceDisplayAdaptor(List<Item> itemlist) {
         this.itemList=itemlist;
 
     }
 
     @NonNull
     @Override
-    public ShoppingListItemDisplayAdaptor_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View storeView = LayoutInflater.from(context).inflate(R.layout.shopping_list_item_display,parent,false);
-        return new ShoppingListItemDisplayAdaptor.ShoppingListItemDisplayAdaptor_ViewHolder(storeView);
+    public ItemStorePriceDisplayAdaptor_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View storeView = LayoutInflater.from(context).inflate(R.layout.item_store_price,parent,false);
+        return new ItemStorePriceDisplayAdaptor.ItemStorePriceDisplayAdaptor_ViewHolder(storeView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShoppingListItemDisplayAdaptor_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemStorePriceDisplayAdaptor_ViewHolder holder, int position) {
         holder.NameTextView.setText(itemList.get(position).getName());
         holder.NameTextView2.setText(itemList.get(position).getId());
     }
@@ -39,12 +40,12 @@ public class ShoppingListItemDisplayAdaptor extends RecyclerView.Adapter<Shoppin
         return itemList.size();
     }
 
-    public class ShoppingListItemDisplayAdaptor_ViewHolder extends RecyclerView.ViewHolder{
+    public class ItemStorePriceDisplayAdaptor_ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView NameTextView;
         public TextView NameTextView2;
 
-        public ShoppingListItemDisplayAdaptor_ViewHolder(@NonNull View itemView) {
+        public ItemStorePriceDisplayAdaptor_ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             NameTextView =itemView.findViewById(R.id.textView21);

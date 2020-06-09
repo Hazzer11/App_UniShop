@@ -1,7 +1,5 @@
-package com.example.assignment_2;
+package com.example.assignment_2.classes;
 
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 
 public class StoreLocation {
@@ -32,8 +30,8 @@ public class StoreLocation {
     }////////name
     public int getid(){return id;}
     public void setId(int id){this.id =id;}///////////////////id
-    public List<com.example.assignment_2.Item> getItemList() {return ItemList;}
-    public void setItemList(List<com.example.assignment_2.Item> ItemList){this.ItemList=ItemList;}//////// Item List
+    public List<Item> getItemList() {return ItemList;}
+    public void setItemList(List<Item> ItemList){this.ItemList=ItemList;}//////// Item List
     public String getOpen() {
         return open;
     }

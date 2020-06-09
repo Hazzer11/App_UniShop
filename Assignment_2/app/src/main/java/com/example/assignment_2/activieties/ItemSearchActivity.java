@@ -1,13 +1,9 @@
-package com.example.assignment_2;
+package com.example.assignment_2.activieties;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import android.app.Fragment;
-
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,12 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.assignment_2.classes.Item;
+import com.example.assignment_2.R;
+import com.example.assignment_2.display_adaptors.ItemListAdaptor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ItemSearchActivity extends AppCompatActivity {
-    List<Item > itemDatabase= new ArrayList<>();
+    List<Item> itemDatabase= new ArrayList<>();
     List<Item> searchList = new ArrayList<>();
     Integer[] imageList = { R.drawable.cola, R.drawable.milk,R.drawable.chicken_drumstick, R.drawable.orange_drink, R.drawable.strawberry_milkshake};
     String[] nameList = {"Cola", "Milk", "Chicken", "Fanta", "Strawberry Milk"};
@@ -36,7 +36,7 @@ public class ItemSearchActivity extends AppCompatActivity {
     public ItemSearchActivity() {
         // Required empty public constructor
     }
-    public RecyclerView tempView;
+    public RecyclerView rectView;
     public ItemListAdaptor itemAdaptor;
     public View view;
 
@@ -58,10 +58,10 @@ public class ItemSearchActivity extends AppCompatActivity {
         searchList.addAll(itemDatabase);
 
         searchButton=findViewById(R.id.button2);
-        tempView= findViewById(R.id.RectView);
+        rectView= findViewById(R.id.RectView);
         itemAdaptor = new ItemListAdaptor(this,searchList);
-        tempView.setAdapter(itemAdaptor);
-        tempView.setLayoutManager(new LinearLayoutManager(this));
+        rectView.setAdapter(itemAdaptor);
+        rectView.setLayoutManager(new LinearLayoutManager(this));
         filterBox=findViewById(R.id.editText);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +70,7 @@ public class ItemSearchActivity extends AppCompatActivity {
                 filterItems();
             }
         });
+
     }
 
 
@@ -87,7 +88,15 @@ public class ItemSearchActivity extends AppCompatActivity {
         }
 
         itemAdaptor = new ItemListAdaptor(this,searchList);
-        tempView.setAdapter(itemAdaptor);
-        tempView.setLayoutManager(new LinearLayoutManager(this));
+        rectView.setAdapter(itemAdaptor);
+        rectView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void viewClicked(View view,int position){
+        Intent i=new Intent(this , Main2Activity.class);
+        i.putExtra("values",searchList.get(position).getValue());
+        i.putExtra("name",searchList.get(position).getName());
+        i.putExtra("image",searchList.get(position).getImage());
+        startActivityForResult(i,0);
     }
 }

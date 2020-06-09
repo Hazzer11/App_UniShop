@@ -1,14 +1,10 @@
-package com.example.assignment_2;
+package com.example.assignment_2.activieties;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.app.Fragment;
-
-
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 
 import android.content.Intent;
 
@@ -16,6 +12,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.assignment_2.classes.Item;
+import com.example.assignment_2.R;
+import com.example.assignment_2.classes.StoreLocation;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -23,7 +22,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
 
 import java.io.File;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,6 +72,7 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
         mMapView = findViewById(R.id.mapView);
         mMapView.onCreate(mapViewBundle);
         mMapView.getMapAsync(this);
+        remakeList();
         for (int k=0;k< lon.length;k++){
             int id = k;
             String names = localNames[k];
@@ -83,7 +82,7 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
             String  closeTime= close[k];
             remakeList();
 
-            storeLocations.add(new StoreLocation(id,lons,lats,names,openTime,closeTime,itemDatabase));
+            //storeLocations.add(new StoreLocation(id,lons,lats,names,openTime,closeTime,itemDatabase));
         }
     }
 
@@ -92,13 +91,13 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
     public void remakeList()
     {
         itemDatabase =new ArrayList<>();
-        com.example.assignment_2.Item item;
+        Item item;
         for (int i= 0; i< imageList.length; i++ )
         { int image = imageList[i];
             String name = nameList[i];
             String description = descriptionList[i];
 
-            item = new com.example.assignment_2.Item (i, image, name, description,Math.random()*10);
+            item = new Item(i, image, name, description,Math.random()*10);
             Log.i("yo",name);
             itemDatabase.add(item);
 

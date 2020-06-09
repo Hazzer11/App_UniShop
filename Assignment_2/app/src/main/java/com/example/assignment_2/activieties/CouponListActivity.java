@@ -1,4 +1,4 @@
-package com.example.assignment_2;
+package com.example.assignment_2.activieties;
 
 import android.os.Bundle;
 
@@ -6,6 +6,8 @@ import android.app.Fragment;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.assignment_2.R;
 
 
 /**

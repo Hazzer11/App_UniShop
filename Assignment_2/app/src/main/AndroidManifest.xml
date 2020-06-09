@@ -11,13 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity"></activity>
-        <activity android:name=".ItemSearchActivity"></activity>
-        <activity android:name=".ShoppingListActivity"></activity>
-        <activity android:name=".CouponListActivity"></activity>
-        <activity android:name=".LocationSelectionPageActivity"></activity>
-        <activity android:name=".ItemDisplayActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activieties.Main2Activity"></activity>
+        <activity android:name=".activieties.ItemSearchActivity"></activity>
+        <activity android:name=".activieties.ShoppingListActivity"></activity>
+        <activity android:name=".activieties.CouponListActivity"></activity>
+        <activity android:name=".activieties.LocationSelectionPageActivity"></activity>
+        <activity android:name=".activieties.ItemDisplayActivity"></activity>
+        <activity android:name=".activieties.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

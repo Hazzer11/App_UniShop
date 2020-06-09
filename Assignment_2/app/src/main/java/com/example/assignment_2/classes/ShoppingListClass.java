@@ -1,9 +1,4 @@
-package com.example.assignment_2;
-
-import android.util.EventLogTags;
-
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+package com.example.assignment_2.classes;
 
 import java.sql.Time;
 
@@ -11,11 +6,11 @@ public class ShoppingListClass {
 
     int id;
     public String name, description;
-    com.example.assignment_2.Item[] ItemsList;
+    Item[] ItemsList;
     Time open,close;
     float val;
 
-    public ShoppingListClass(int id,   String name, String description,com.example.assignment_2.Item[] ItemsList,Time open,Time close,float val) {
+    public ShoppingListClass(int id, String name, String description, Item[] ItemsList, Time open, Time close, float val) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -43,10 +38,10 @@ public class ShoppingListClass {
     public void setDescription(String description) {
         this.description = description;
     }
-    public com.example.assignment_2.Item[] getItemsList() {
+    public Item[] getItemsList() {
         return ItemsList;
     }
-    public void setItemsList(com.example.assignment_2.Item[] ItemsList) {this.ItemsList = ItemsList;}
+    public void setItemsList(Item[] ItemsList) {this.ItemsList = ItemsList;}
 
 
 }
