@@ -1,0 +1,6 @@
+Harry L(218241616)
+The project UniApp is designed to be an app that will scoure the local area and look for the best deals on groceries and other food stuff.
+the idea behind it was to create an app that means you spend a little more time going to 2 or 3 shops yet you are able to save money by doing so.
+with most of the processing being done online, there is little space that is needed to be used on the phone.
+
+GitLink:https://github.com/Hazzer11/App_UniShop

@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Assignment_2</string>
-
-    <string name="policies">This is the list of the policies that are tied to the app and allow me to contain within in, all the information that ill need to make it so that i can let users know that there is stuff tied to the app that must be followed and what the data uses are.</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyARw7ufzADFOj9KQaCckj-1nDxPFlrGe9o</string>
-</resources>

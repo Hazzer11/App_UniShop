@@ -1,0 +1,12 @@
+1:13/05/2020:adding base app
+2:16/05/2020:added project proposal at current state
+3:19/05/2020:Added mock ups
+4:26/05/2020:added laout for fragments and home pages
+5:26/05/2020:fixed fragments not reconising, set up fragment swapping and set up activity swapping with basic login system
+6:26/05/2020:Added Item class and image assets for temp item database
+7:28/05/2020:adding settings tab with issues loading it with research into maps
+8:31/05/2020:started to add array adaptors with map function added
+9:03/06/2020:fixed drop down issue
+10:07/06/2020:modified app to use activities not fragments. started to impliment storage with lots of research
+11:09/06/2020:added databases in the form of SQLite, working on list creation and removal
+12:10/06/2020:final upload, app works as demonstration piece. more functionality needed
